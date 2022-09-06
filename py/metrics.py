@@ -71,7 +71,7 @@ def calculate_equality_of_opportunity(list_of_dataframes, cohort_definition_ids)
         for item in ele:
             intermediate_set = intermediate_set.intersection(all_sets[item])
         
-        Y = intermediate_sets.union(intermediate_set)
+        Y = Y.union(intermediate_set)
     
     full_df = pd.concat([df[df.person_id.isin(Y)] for df in list_of_dataframes]).drop_duplicates()
 
@@ -124,7 +124,7 @@ def calculate_predictive_rate_parity(list_of_dataframes, cohort_definition_ids):
         for item in ele:
             intermediate_set = intermediate_set.intersection(all_sets[item])
         
-        Y = intermediate_sets.union(intermediate_set)
+        Y = Y.union(intermediate_set)
 
     diffs = []
 
